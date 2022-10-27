@@ -8,16 +8,15 @@ class Pattern
         int i,j;
         for(i=1;i<=n;i++)
         {
-            System.out.print(i+" ");
-        }
-        System.out.println();
-        for(i=2;i<=n;i++)
-        {
-            for(j=2;j<=n;j++)
+            for(j=1;j<=n;j++)
             {
-                if(i==j || j>=i)
+                if(i==j || (i==n+1-j))
                 {
-                    System.out.print(j+" ");
+                    System.out.print(n-i+1+" ");
+                }
+                else
+                {
+                    System.out.print(" ");
                 }
             }
             System.out.println();
