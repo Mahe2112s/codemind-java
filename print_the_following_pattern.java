@@ -10,7 +10,10 @@ class Pattern
         {
             for(j=1;j<=n;j++)
             {
-                System.out.print((char)(64+i)+" ");
+                if(i==j || i>=j)
+                {
+                    System.out.print(j);
+                }
             }
             System.out.println();
         }
