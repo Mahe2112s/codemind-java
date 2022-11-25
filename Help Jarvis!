@@ -1,0 +1,44 @@
+import java.util.*;
+import java.util.Arrays;
+class Jarvis
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int f=sc.nextInt();
+        for(int k=0;k<f;k++)
+        {
+            int a,i,v;
+            a=sc.nextInt();
+            v=(int)Math.log10(a)+1;
+            int[] x=new int[v];
+            int l=0,r,y=0,min=Integer.MAX_VALUE;
+            while(a>0)
+            {
+                r=a%10;
+                a=a/10;
+                x[l++]=r;
+                if(r<min)
+                {
+                    min=r;
+                }
+                //System.out.printf("%d ",x[l-1]);
+                y++;
+            }
+            //System.out.println(min);
+            Arrays.sort(x);
+            r=0;
+            for(i=0;i<v-1;i++)
+            {
+                if((x[i+1]-x[i])!=1)
+                {
+                    System.out.println("NO");
+                    r=1;
+                    break;
+                }
+            }
+            if(r==0)
+            System.out.println("YES");
+        }
+    }
+}
